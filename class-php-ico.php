@@ -190,7 +190,7 @@ class PHP_ICO {
 		$height = imagesy( $im );
 
 
-		if ($width == 256) {
+		if ($width >= 256 || $height >= 256) {
 			$format = 'png';
 			ob_start();
 			imagepng($im);
