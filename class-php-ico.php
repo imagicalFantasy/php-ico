@@ -161,7 +161,6 @@ class PHP_ICO {
 		foreach ( $this->_images as $image ) {
 			if ($image['format'] == 'png') {
 				$data .= pack( 'CCCCvvVV', $image['width'], $image['height'], $image['color_palette_colors'], 0, 1, $image['bits_per_pixel'], $image['size'], $offset );
-				var_dump(bin2hex($data));
 				$pixel_data .= $image['data'];
 
 				$offset += $image['size'];
@@ -204,7 +203,6 @@ class PHP_ICO {
 
 
 			$data = $imagedata;
-			var_dump(strlen($data));
 		}
 		else {
 			$format = 'bmp';
